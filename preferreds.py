@@ -1,6 +1,6 @@
 import csv
 
-prefFile = open('Preferreds.csv')
+prefFile = open('data/Preferreds.csv')
 prefReader = csv.reader(prefFile)
 prefData = list(prefReader)
 
