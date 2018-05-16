@@ -11,8 +11,7 @@ for i in range(3):
 
 		
 for row in prefData:
-    print(row)
-    
-    
-    
-    
+		print('{:15} {:5} {:5} {:5} {:5} {:5} {:5} {:5} {:5} {:5} {:5} {:5} {:5} {:5}'.format(*row))
+    # print(row)
+
+
