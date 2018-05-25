@@ -5,7 +5,7 @@ from operator import itemgetter
 prefFile = open('data/Preferreds.csv')
 prefReader = csv.reader(prefFile)
 prefData = list(prefReader)
-
+FORMAT = '{:45} {:7} {:>7} {:>7} {:>7} {:>7} {:>7} {:>7} {:>13} {:>12} {:>12} {:>7} {:>7} {:>9}'
 
 #remove the first three items from the list
 
@@ -14,7 +14,9 @@ for i in range(3):
 
 headerRow = prefData[0]
 del prefData[0]
-print('{:45} {:7} {:>7} {:>7} {:>7} {:>7} {:>7} {:>7} {:>13} {:>12} {:>12} {:>7} {:>7} {:>9}'.format(*headerRow))
+
+print(FORMAT.format(*headerRow))
+
 
 for i in range(len(prefData)):
     if prefData[i][12] == '...':
@@ -25,7 +27,8 @@ newList = sorted(prefData, key=lambda x: float(x[12]), reverse = True)
 
 for row in newList:
     row[0] = row[0][:40]
-    print('{:45} {:7} {:>7} {:>7} {:>7} {:>7} {:>7} {:>7} {:>13} {:>12} {:>12} {:>7} {:>7} {:>9}'.format(*row))
+    print(FORMAT.format(*row))
+
 
 ## Columns/Elements
 ## (0)name
